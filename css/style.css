@@ -1,0 +1,10 @@
+/*test styles */
+
+label {
+	display: block;
+}	
+		
+.error {
+	color: #C00!important;
+	font-weight: bold;
+}
