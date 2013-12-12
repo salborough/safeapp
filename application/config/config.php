@@ -14,8 +14,8 @@
 | path to your installation.
 |
 */
-//$config['base_url']	= "http://localhost/safeCI";
-$config['base_url']	= "http://safeappdev.alboroughlabs.com";
+$config['base_url']	= "http://localhost/safeapp";
+//$config['base_url']	= "http://safeappdev.alboroughlabs.com"; this is what is on the server
 
 /*
 |--------------------------------------------------------------------------

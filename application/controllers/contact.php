@@ -40,11 +40,11 @@ class Contact extends CI_Controller {
 			}
 		
 		
-		$page_title['title'] = 'Manage Contacts';
+		$page_title['title'] = 'Contacts';
 		
-		$this->load->view('templates/header', $page_title);
-		$this->load->view('templates/menu');
+		$this->load->view('templates/header', $page_title);		
 		$this->load->view('contact/index', $data);
+		$this->load->view('templates/menu');
 		$this->load->view('templates/footer');
 		
 	}

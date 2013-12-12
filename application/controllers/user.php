@@ -127,11 +127,47 @@ class User extends CI_Controller {
 
 		$page_title['title'] = 'Profile';
 	
-		$this->load->view('templates/header', $page_title);
-		$this->load->view('templates/menu');
+		$this->load->view('templates/header', $page_title);		
 		$this->load->view('user/view', $data);
+		$this->load->view('templates/menu');
 		$this->load->view('templates/footer');
 	}
 	
 	
+
+
+// --------------------------------------------------------------------
+
+function contactprofile()
+	{
+		//need to check if user is logged in before displaying this page
+		$this->is_logged_in();
+		
+		$id = $this->uri->segment(3);
+		
+		//print_r($id);//get contact from user id posted in the URL
+		
+		$data['user_record'] = $this->user_model->get_records($id);
+		
+		if (empty($data['user_record']))
+		{
+			show_404();
+			
+		}
+
+		$page_title['title'] = 'Profile';
+	
+		$this->load->view('templates/header', $page_title);		
+		$this->load->view('user/contactprofile', $data);
+		$this->load->view('templates/menu');
+		$this->load->view('templates/footer');
+	}
+	
+	
+
+
+	
+// --------------------------------------------------------------------
+
+
 }

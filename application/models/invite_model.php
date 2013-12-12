@@ -31,11 +31,11 @@ class Invite_model extends CI_Model {
 		}
 		//might need to also pass invite status? so only get pending results?		
 		//specifically stipulating colums to return, as the join means the create_time tables are the same 
-		$this->db->select('tbl_invite.id, tbl_invite.user_id_from, tbl_invite.create_time, tbl_user.first_name, tbl_user.last_name, tbl_user.screen_name');
+		$this->db->select('tbl_invite.id, tbl_invite.user_id_from, tbl_invite.create_time, tbl_user.first_name, tbl_user.last_name, tbl_user.screen_name, tbl_invite_status.*');
 		
 		
 		$this->db->join('tbl_user', 'tbl_user.id = tbl_invite.user_id_from');
-		//$this->db->join('tbl_invite', 'tbl_invite.invite_status_id = tbl_invite_status.id'); need to still add the join to the invite status tbl
+		$this->db->join('tbl_invite_status', 'tbl_invite_status.id = tbl_invite.invite_status_id'); //join to the invite status tbl
 		$query = $this->db->get_where('tbl_invite', array('user_id_to' => $id));		
 		
 		return $query->result();
@@ -52,11 +52,11 @@ class Invite_model extends CI_Model {
 		}
 				
 		//specifically stipulating colums to return, as the join means the create_time tables are the same 
-		$this->db->select('tbl_invite.id, tbl_invite.user_id_to, tbl_invite.create_time, tbl_user.first_name, tbl_user.last_name, tbl_user.screen_name');
+		$this->db->select('tbl_invite.id, tbl_invite.user_id_to, tbl_invite.create_time, tbl_user.first_name, tbl_user.last_name, tbl_user.screen_name, tbl_invite_status.*');
 		
 		
 		$this->db->join('tbl_user', 'tbl_user.id = tbl_invite.user_id_to');
-		//$this->db->join('tbl_invite', 'tbl_invite.invite_status_id = tbl_invite_status.id'); need to still add the join to the invite status tbl
+		$this->db->join('tbl_invite_status', 'tbl_invite_status.id = tbl_invite.invite_status_id'); //join to the invite status tbl
 		$query = $this->db->get_where('tbl_invite', array('user_id_from' => $id));		
 		
 		return $query->result();

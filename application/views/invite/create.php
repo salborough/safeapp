@@ -2,7 +2,7 @@
 
 
 
-	<h2>Invite Person</h2>
+	<h4><a href="javascript:history.back()">< back</a> Invite Contact</h4>
 		
 	<?php echo form_open('invite/inviteuser');?>
 		<?php echo form_error('pin'); ?>

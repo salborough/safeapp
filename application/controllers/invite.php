@@ -51,11 +51,11 @@ class Invite extends CI_Controller {
 				echo 'no records found';
 			}
 		
-		$page_title['title'] = 'Manage Invites';
+		$page_title['title'] = 'Invites';
 		
-		$this->load->view('templates/header', $page_title);
-		$this->load->view('templates/menu');
+		$this->load->view('templates/header', $page_title);		
 		$this->load->view('invite/index', $data);
+		$this->load->view('templates/menu');
 		$this->load->view('templates/footer');
 		
 	}
@@ -68,8 +68,8 @@ class Invite extends CI_Controller {
 		$page_title['title'] = 'Invite Person';
 		
 		$this->load->view('templates/header', $page_title);
-		$this->load->view('templates/menu');
 		$this->load->view('invite/create');
+		$this->load->view('templates/menu');
 		$this->load->view('templates/footer');		
 		
 	}
@@ -125,7 +125,7 @@ class Invite extends CI_Controller {
 					'user_id_to' => $user_id_to,
 					'user_id_from' => $user_id_from,
 					'invite_status_id'	=> $invite_status_id,
-					'create_time' => date('Y-m-d'),					
+					'create_time' => date('Y-m-d\TH:i:sP'),  //date('Y-m-d'),					
 				);
 				
 				$this->invite_model->add_record($data);
