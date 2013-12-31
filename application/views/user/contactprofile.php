@@ -6,8 +6,8 @@
 <hr/>
 
 <p><label for="name">Name:</label> <?php echo $user_record['first_name'], ' ', $user_record['last_name'] ?> </p>
-<p><label for="status">Status:</label> still to come</p>
-<p><label for="gps">Last GPS:</label> still to come</p>
+<p><label for="status">Status:</label> <?php echo $user_record['safe_notification_status']; ?></p>
+<p><label for="gps">Last GPS:</label> <?php echo $user_record['gps']; ?></p>
 <p><label for="screen_name">Screen Name:</label> <?php echo $user_record['screen_name'] ?> </p>
 <p><label for="pin">Safe App Pin:</label> <?php echo $user_record['pin'] ?> </p>
 

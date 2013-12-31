@@ -1,4 +1,4 @@
-<!-- This view page is used to send safe notifications to the other users -->
+<!-- This view page is used to send safe notifications to members in a group-->
 
 
 
@@ -6,8 +6,20 @@
 		
 	<table>
 		<tr>
-			<td><?php echo anchor('safenotification/send/1/' . $user_id_to, 'Safe') . '|'; 
-				  echo anchor('safenotification/send/2/' . $user_id_to, 'Unsafe');?>
+			<td><?php 
+					if ($group_id =!NULL) {
+						
+						echo anchor('safenotification/sendbulknotification/1/' . $group_id, 'Safe') . '|'; 
+				  		echo anchor('safenotification/sendbulknotification/2/' . $group_id, 'Unsafe');						
+					}
+					
+					else {
+						
+						echo anchor('safenotification/sendbulknotification/1/', 'Safe') . '|'; 
+				  		echo anchor('safenotification/sendbulknotification/2/', 'Unsafe');
+					}			
+			
+					?>
 			</td> 			
 		</tr>
 		<tr>

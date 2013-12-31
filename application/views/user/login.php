@@ -14,8 +14,11 @@
 	echo form_password('password', 'Password');
 	
 	echo form_submit('submit', 'Submit');
-	echo anchor('login/register', 'Create Account');
+	
 	
 	echo form_close();
 
 ?>
+
+<hr/>
+<h4><?php echo anchor('login/register', 'Create Account'); ?></h4>

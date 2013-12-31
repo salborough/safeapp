@@ -116,9 +116,9 @@ class User extends CI_Controller {
 		$this->is_logged_in();
 		
 		$id = $this->session->userdata('id'); //called this function to get user id from the session
-		print_r($id);
+		//print_r($id);
 		
-		$data['user_record'] = $this->user_model->get_records($id);
+		$data['user_record'] = $this->user_model->get_view_record($id);
 		
 		if (empty($data['user_record']))
 		{
@@ -131,6 +131,7 @@ class User extends CI_Controller {
 		$this->load->view('user/view', $data);
 		$this->load->view('templates/menu');
 		$this->load->view('templates/footer');
+		//print_r($data);
 	}
 	
 	
@@ -147,7 +148,7 @@ function contactprofile()
 		
 		//print_r($id);//get contact from user id posted in the URL
 		
-		$data['user_record'] = $this->user_model->get_records($id);
+		$data['user_record'] = $this->user_model->get_view_record($id);    //get_records($id); this was the old model used
 		
 		if (empty($data['user_record']))
 		{

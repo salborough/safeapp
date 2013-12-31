@@ -2,7 +2,7 @@
 
 <?php //print_r($contact_record); ?>
 
-<h4> <?php echo anchor('invite/create', '< Groups'); ?> Contacts <?php echo anchor('invite/create', '+Invite Contact'); ?></h4>
+<h4> <?php echo anchor('group/index', '< Groups'); ?> Contacts <?php echo anchor('invite/create', '+Invite Contact'); ?></h4>
 
 
 <!-- still to do: put in search bar and sort options -->
@@ -19,8 +19,8 @@
 		
 	</tr>
 	<tr>
-		<td>safe</td> <!-- still to add latest status-->
-		<td>10-12-2013</td> <!-- still to add latest status date updated-->
+		<td><?php echo $row->safe_notification_status ; ?></td> 
+		<td><?php echo $row->create_time ; ?></td> 
 	</tr>
 	<tr>
 		<td></td>

@@ -10,7 +10,7 @@
 	<?php foreach ($tracklog_record as $row):?>	
 	<tr>
 		<td> <?php echo  $row->safe_notification_status .' '. $row->create_time;  ?> </td>	
-		<td> GPS still to add</td>		
+		<td> <?php echo  $row->gps;  ?></td>		
 	</tr>	
 	<?php endforeach;?>	
 </table>

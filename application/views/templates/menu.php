@@ -3,7 +3,7 @@
 <hr />
 <table>
   <tr>
-    <td><?php echo 'Home'; ?></td> <!-- still to come -->    
+    <td><?php echo anchor('dashboard/index', 'Home'); ?></td> <!-- still to come -->    
     <td><?php echo anchor('contact/index', 'Contacts'); ?></td>
     <td><?php echo anchor('tracking/index', 'Tracking'); ?></td> 
     <td><?php echo anchor('invite/index', 'Invites'); ?></td> <!-- note invites will probably be on the contacts page so will probably do away with this -->

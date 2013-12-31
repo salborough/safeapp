@@ -7,7 +7,7 @@ we also list all the safe notifications sent by the user-->
 
 <h4>Tracking</h4>
 
-<h5>Safe Requests Received <?php echo anchor('saferequest/send', '+Send Safe Request'); ?></h5> <!-- will need to go via contacts page to select the user to id -->
+<h5>Safe Requests Received <?php echo anchor('contact/bulksaferequest', '+Send Safe Request'); ?></h5> <!-- will need to go via contacts page to select the user to id -->
 
 <table>
 	<tr>
@@ -29,7 +29,7 @@ we also list all the safe notifications sent by the user-->
 </table>
 
 <br /> <br />
-<h5>Safe Notifications Sent <?php echo anchor('safenotification/create/' , '+Send Safe Notification');?></h5> <!-- will need to go via contacts page to select the user to id -->
+<h5>Safe Notifications Sent <?php echo anchor('contact/bulksafenotification' , '+Send Safe Notification');?></h5> <!-- will need to go via contacts page to select the user to id -->
 
 <table>
 	<tr>
